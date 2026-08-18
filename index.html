@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Share Live Location</title>
+
+
+    <link rel="icon" href="data:,">
+    <!-- Leaflet CSS -->
+    <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <h1>Share Live Location</h1>
+
+        <p class="subtitle">
+            Your location will be shared with the admin only after you click Start Sharing and allow permission.
+        </p>
+
+        <div class="card">
+
+            <div class="warning-box">
+                <strong>Privacy Notice:</strong>
+                Your live location will be sent to the admin dashboard. 
+                You can stop sharing anytime using the Stop Sharing button.
+            </div>
+
+            <div class="button-group">
+                <button id="startBtn" class="primary-btn">
+                    Start Sharing
+                </button>
+
+                <button id="stopBtn" class="danger-btn" disabled>
+                    Stop Sharing
+                </button>
+            </div>
+
+            <p id="statusText" class="status">
+                Location sharing not started.
+            </p>
+
+            <div class="location-box">
+
+                <div class="location-item">
+                    <span>Latitude</span>
+                    <strong id="latitude">--</strong>
+                </div>
+
+                <div class="location-item">
+                    <span>Longitude</span>
+                    <strong id="longitude">--</strong>
+                </div>
+
+                <div class="location-item">
+                    <span>Accuracy</span>
+                    <strong id="accuracy">--</strong>
+                </div>
+
+            </div>
+
+            <p class="small-text">
+                Keep this page open for live tracking. If you close the page, live sharing will stop.
+            </p>
+
+        </div>
+
+        <div id="map"></div>
+
+    </div>
+
+    <!-- Firebase Compat CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Our Files -->
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

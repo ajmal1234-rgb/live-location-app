@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Location Dashboard</title>
+
+
+
+    <link rel="icon" href="data:,">
+    
+    <!-- Leaflet CSS -->
+    <link 
+    rel="stylesheet"  
+    href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <h1>Admin Location Dashboard</h1>
+
+        <p class="subtitle">
+            Live location updates from users who allowed location sharing.
+        </p>
+
+        <div id="loginBox" class="card">
+            <h2 class="card-title">Admin Login</h2>
+
+            <input 
+                type="password" 
+                id="adminPassword" 
+                class="input-box" 
+                placeholder="Enter admin password"
+            >
+
+            <button id="loginBtn" class="primary-btn">
+                Open Dashboard
+            </button>
+
+            <p id="loginError" class="error-text"></p>
+        </div>
+
+        <div id="dashboardBox" style="display: none;">
+
+            <div class="card">
+
+                <h2 class="card-title">Live Users</h2>
+
+                <p id="totalUsers" class="status">
+                    Total sharing users: 0
+                </p>
+
+                <div id="usersList" class="users-list">
+                    No users are sharing location now.
+                </div>
+
+            </div>
+
+            <div id="dashboardMap"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Firebase Compat CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Our Files -->
+    <script src="firebase-config.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
